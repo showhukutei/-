@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | 株式会社LIFE CREATION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="LIFE CREATION">
+                </a>
+            </h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#news">NEWS</a></li>
+                    <li><a href="index.html#service">SERVICE</a></li>
+                    <li><a href="index.html#company">COMPANY</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="tel:0120-000-000" class="btn-tel">
+                    <span class="tel-text">お気軽にご相談を♪</span>
+                    <span class="tel-number">0120-000-000</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2 class="section-title">CONTACT</h2>
+                <p class="section-desc">お問い合わせ</p>
+            </div>
+        </section>
+
+        <section class="section contact-form-section">
+            <div class="container">
+                <form class="contact-form" action="mailto:lifecreation.2017@gmail.com?subject=【HPよりお問い合わせ】"
+                    method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">お名前 <span class="required">必須</span></label>
+                        <input type="text" id="name" name="name" placeholder="例：山田 太郎" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">必須</span></label>
+                        <input type="email" id="email" name="email" placeholder="例：info@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tel">電話番号</label>
+                        <input type="tel" id="tel" name="tel" placeholder="例：090-1234-5678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">お問い合わせ内容 <span class="required">必須</span></label>
+                        <select id="category" name="category" required>
+                            <option value="">選択してください</option>
+                            <option value="reform">リフォームのご相談</option>
+                            <option value="estimate">お見積り依頼</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">詳細内容 <span class="required">必須</span></label>
+                        <textarea id="message" name="message" rows="8" placeholder="ご相談内容を詳しくご記入ください"
+                            required></textarea>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn-contact">送信する（メールソフト起動）</button>
+                        <p style="margin-top: 15px; font-size: 0.85rem; color: #666;">
+                            ※ボタンを押すとメールソフトが起動します。<br>文字化けする場合は、お手数ですが直接メールをお送りください。</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="copyright">&copy; LIFE CREATION Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
