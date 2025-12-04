@@ -312,7 +312,7 @@ img {
 
 /* Company Section */
 .company-section {
-    background-color: var(--color-bg);
+    background-color: transparent;
     border-radius: 0;
 }
 
@@ -337,7 +337,7 @@ img {
     grid-template-columns: 120px 1fr;
     gap: 20px;
     text-align: left;
-    background-color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 50px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -784,7 +784,8 @@ body::before {
 }
 
 .opening-logo {
-    width: 200px; /* Adjust based on logo size */
+    width: 200px;
+    /* Adjust based on logo size */
     opacity: 0;
     animation: zoomInLogo 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
@@ -794,11 +795,14 @@ body::before {
         transform: scale(0.8);
         opacity: 0;
     }
+
     20% {
         opacity: 1;
     }
+
     100% {
-        transform: scale(2.0); /* Zoom in effect */
+        transform: scale(2.0);
+        /* Zoom in effect */
         opacity: 1;
     }
 }
