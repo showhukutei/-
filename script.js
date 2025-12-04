@@ -22,4 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Opening Animation
+    const openingAnimation = document.querySelector('.opening-animation');
+    if (openingAnimation) {
+        setTimeout(() => {
+            openingAnimation.classList.add('hidden');
+        }, 2500); // Match animation duration
+    }
+
 });
