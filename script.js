@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Select elements to animate
-    const animatedElements = document.querySelectorAll('.hero-content, .hero-image, .news-item, .service-card, .company-content, .contact-buttons');
+    const animatedElements = document.querySelectorAll('.hero-content, .hero-image, .news-item, .service-card, .service-item, .company-content, .contact-buttons');
 
     animatedElements.forEach(el => {
         el.classList.add('fade-in-up');
