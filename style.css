@@ -426,9 +426,11 @@ img {
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         white-space: normal;
-        word-break: keep-all;
+        word-wrap: break-word;
+        word-break: break-word;
+        /* Allow breaking inside words if needed to prevent overflow */
         line-height: 1.4;
     }
 
@@ -477,14 +479,7 @@ img {
         width: 100%;
     }
 
-    .hero-title {
-        font-size: 2rem;
-        white-space: normal;
-        word-break: keep-all;
-        overflow-wrap: break-word;
-        /* Ensure really long words wrap */
-        line-height: 1.4;
-    }
+
 
     .contact-buttons {
         flex-direction: column;
