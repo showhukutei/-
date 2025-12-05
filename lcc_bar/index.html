@@ -74,10 +74,65 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
+
+        /* Opening Animation */
+        #opening-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            pointer-events: none;
+            /* Allow click through after fade */
+        }
+
+        #opening-logo {
+            width: 150px;
+            will-change: transform, opacity;
+            animation: zoomInLogo 2.8s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes zoomInLogo {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(80);
+                opacity: 0;
+                /* Fade out as it passes */
+            }
+        }
+
+        .fade-out-overlay {
+            animation: fadeOutBg 1.5s ease-out forwards;
+            animation-delay: 2s;
+            /* Start fading bg before logo finishes */
+        }
+
+        @keyframes fadeOutBg {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
     </style>
 </head>
 
 <body class="bg-noir-bg text-noir-text font-serif antialiased overflow-x-hidden">
+
+    <!-- Opening Overlay -->
+    <div id="opening-overlay">
+        <img src="./logo.png" alt="LCC Logo" id="opening-logo">
+    </div>
 
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
@@ -234,6 +289,21 @@
                 console.error('Failed to copy: ', err);
             });
         }
+
+        // Handle Opening Animation cleanup
+        window.addEventListener('load', () => {
+            const overlay = document.getElementById('opening-overlay');
+            // Add class to start fading out the black background
+            // The logo animation is already running via CSS
+            setTimeout(() => {
+                overlay.classList.add('fade-out-overlay');
+            }, 500); // Wait a bit before starting bg fade
+
+            // Remove from DOM after everything is done
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 3500);
+        });
     </script>
 </body>
 
