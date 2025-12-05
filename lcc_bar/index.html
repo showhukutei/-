@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCC - Life Creation Club</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: {
+                            bg: '#1a1a1a',
+                            text: '#E0E0E0',
+                            accent: '#C19A6B', // Warm Wood/Whiskey
+                            dark: '#0f0f0f',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Shippori Mincho"', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-slow': 'fadeIn 3s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Selection Color */
+        ::selection {
+            background-color: #C19A6B;
+            color: #0f0f0f;
+        }
+
+        /* Glass effect for subtle overlays */
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="bg-noir-bg text-noir-text font-serif antialiased overflow-x-hidden">
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <!-- User provided atmospheric image -->
+            <div
+                class="absolute inset-0 bg-[url('./bg-main.png')] bg-cover bg-center bg-no-repeat bg-fixed opacity-60 animate-fade-in-slow">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-b from-noir-bg/90 via-noir-bg/50 to-noir-bg"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto animate-fade-in-slow">
+            <h1 class="text-6xl md:text-8xl tracking-widest mb-6 text-noir-accent font-light drop-shadow-2xl">LCC</h1>
+            <div class="w-16 h-[1px] bg-noir-accent mx-auto mb-8 shadow-[0_0_10px_rgba(193,154,107,0.5)]"></div>
+            <p class="text-lg md:text-xl tracking-[0.2em] leading-loose text-gray-200 drop-shadow-lg font-light">
+                一見さんお断り。<br class="md:hidden" />
+                煙と音と、<br class="md:hidden" />
+                野心を愛する者たちへ。
+            </p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce opacity-70">
+            <svg class="w-6 h-6 text-noir-accent drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Philosophy Section (Story) -->
+    <section class="py-32 px-6 bg-black min-h-[80vh] flex items-center justify-center relative">
+        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-noir-bg to-transparent"></div>
+
+        <div class="max-w-2xl mx-auto text-center space-y-16 reveal">
+            <p class="text-xl md:text-2xl leading-loose tracking-widest">
+                いい仕事のあとには、<br />
+                いい酒を。
+            </p>
+
+            <p class="text-base md:text-lg leading-loose text-gray-400 tracking-wider">
+                ここはリフォーム屋が営む、<br />
+                夜の休憩所。<br /><br />
+                住所は同じですが、<br />
+                ドアを開けるのは<br />
+                『招待客』だけにしています。
+            </p>
+
+            <p class="text-sm text-noir-accent tracking-widest opacity-80">
+                （ LIFE CREATION Night Mode ）
+            </p>
+        </div>
+    </section>
+
+    <!-- System Section -->
+    <section class="py-32 px-6 bg-noir-bg relative">
+        <div class="max-w-3xl mx-auto reveal">
+            <h2
+                class="text-3xl tracking-[0.3em] text-center mb-20 text-noir-accent border-b border-noir-accent/30 hover:border-noir-accent transition-colors duration-500 inline-block mx-auto pb-4 px-8">
+                SYSTEM
+            </h2>
+
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-y-12 gap-x-8 text-left items-start">
+
+                <!-- OPEN -->
+                <div class="text-gray-500 tracking-widest text-sm pt-1">OPEN</div>
+                <div class="text-xl tracking-wider">
+                    19:00 - MIDNIGHT <span class="text-sm text-gray-500 ml-2">(Irregular)</span>
+                </div>
+
+                <!-- CHARGE -->
+                <div class="text-gray-500 tracking-widest text-sm pt-1">CHARGE</div>
+                <div class="text-xl tracking-wider">
+                    会員・紹介制
+                </div>
+
+                <!-- ADDRESS -->
+                <div class="text-gray-500 tracking-widest text-sm pt-1">ADDRESS</div>
+                <div class="group relative">
+                    <p id="address-text"
+                        class="text-lg tracking-wider leading-relaxed cursor-text selection:bg-noir-accent selection:text-black">
+                        〒234-0054<br />
+                        神奈川県横浜市港南区港南台4-3-9 <br class="md:hidden" />荒井ビル10C
+                    </p>
+
+                    <button onclick="copyAddress()"
+                        class="mt-4 text-sm text-noir-accent/70 hover:text-noir-accent border border-noir-accent/30 px-4 py-2 hover:bg-noir-accent/10 transition-all flex items-center gap-2 group-hover:opacity-100 opacity-70">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                        Copy Address
+                    </button>
+                    <span id="copy-feedback"
+                        class="absolute left-36 top-[4.5rem] text-sm text-green-500 opacity-0 transition-opacity duration-300">Copied!</span>
+                </div>
+            </div>
+
+            <!-- Note Box -->
+            <div class="mt-20 p-8 border border-white/5 bg-white/5 backdrop-blur-sm rounded-sm text-center">
+                <p class="text-gray-400 leading-relaxed tracking-wider text-sm">
+                    入り口は<span class="text-gray-200">事務所のドアと同じ</span>です。<br />
+                    インターホンで会員名をお伝えください。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black text-center border-t border-white/5">
+        <p class="text-gray-600 text-xs tracking-widest mb-6">
+            Operated by LIFE CREATION Co., Ltd.
+        </p>
+
+        <a href="https://showhukutei.github.io/-/"
+            class="inline-block text-xs text-noir-accent hover:text-white transition-colors duration-300 tracking-[0.2em] border-b border-transparent hover:border-white pb-1">
+            ← Back to Day Mode
+        </a>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll Reveal Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Copy Function
+        function copyAddress() {
+            const address = "〒234-0054 神奈川県横浜市港南区港南台4-3-9 荒井ビル10C";
+            navigator.clipboard.writeText(address).then(() => {
+                const feedback = document.getElementById('copy-feedback');
+                feedback.classList.remove('opacity-0');
+                setTimeout(() => {
+                    feedback.classList.add('opacity-0');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+
+</html>
